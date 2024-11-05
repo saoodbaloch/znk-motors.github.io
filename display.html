@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZNKMotors - Vehicle Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .display-container {
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            overflow-x: auto;
+        }
+        .display-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .navbar {
+                font-size: 16px;
+            }
+            table {
+                min-width: 500px;
+            }
+        }
+        @media (max-width: 480px) {
+            .navbar {
+                font-size: 14px;
+                padding: 10px;
+            }
+            .display-container {
+                padding: 15px;
+            }
+            th, td {
+                padding: 8px;
+            }
+            table {
+                min-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#">ZNKMotors</a>
+    <a href="index.html">Form</a>
+    <a href="display.html">Display</a>
+</div>
+
+<div class="display-container">
+    <h2>Vehicle Details</h2>
+    <table id="vehicle-details">
+        <thead>
+            <tr>
+                <th>Stock ID</th>
+                <th>Maker/Brand</th>
+                <th>Chassis No</th>
+                <th>Chassis Code</th>
+                <th>Transmission</th>
+                <th>Reg Year</th>
+                <th>Color Code</th>
+                <th>Interior Color</th>
+                <th>Engine CC</th>
+                <th>Drive</th>
+                <th>Body Type</th>
+                <th>Fuel</th>
+                <th>Seats</th>
+                <th>Color Name</th>
+                <th>Loading Capacity</th>
+                <th>Engine Type</th>
+                <th>M3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be added dynamically -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Fetch the vehicle data from localStorage
+    const formData = JSON.parse(localStorage.getItem('vehicleData')) || {};
+
+    // Function to populate the table with vehicle details
+    function populateTable() {
+        const tableBody = document.querySelector('#vehicle-details tbody');
+        if (Object.keys(formData).length === 0) {
+            const row = tableBody.insertRow();
+            const cell = row.insertCell();
+            cell.colSpan = 17; // Adjust colspan for all columns
+            cell.textContent = 'No vehicle data available.';
+        } else {
+            const row = tableBody.insertRow();
+            row.insertCell().textContent = formData.stockID || '';
+            row.insertCell().textContent = formData.maker || '';
+            row.insertCell().textContent = formData.chassisNo || '';
+            row.insertCell().textContent = formData.chassisCode || '';
+            row.insertCell().textContent = formData.transmission || '';
+            row.insertCell().textContent = formData.regYear || '';
+            row.insertCell().textContent = formData.colorCode || '';
+            row.insertCell().textContent = formData.interiorColor || '';
+            row.insertCell().textContent = formData.engineCC || '';
+            row.insertCell().textContent = formData.drive || '';
+            row.insertCell().textContent = formData.bodyType || '';
+            row.insertCell().textContent = formData.fuel || '';
+            row.insertCell().textContent = formData.seats || '';
+            row.insertCell().textContent = formData.colorName || '';
+            row.insertCell().textContent = formData.loadingCapacity || '';
+            row.insertCell().textContent = formData.engineType || '';
+            row.insertCell().textContent = formData.m3 || '';
+        }
+    }
+
+    // Call the function to populate the table when the page loads
+    window.onload = populateTable;
+</script>
+
+</body>
+</html>

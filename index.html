@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZNKMotors - Vehicle Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Navbar */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        /* Form Styling */
+        .form-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        select, input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#">ZNKMotors</a>
+    <a href="index.html">Form</a>
+    <a href="display.html">Display</a>
+</div>
+
+<div class="form-container">
+    <h2>Vehicle Details Form</h2>
+    <div class="form-group-row">
+        <div class="form-group">
+            <label for="stock-id">Stock ID</label>
+            <input type="text" id="stock-id">
+        </div>
+        <div class="form-group">
+            <label for="maker">Maker/Brand</label>
+            <select id="maker">
+                <option value="" disabled selected>Select Maker/Brand</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+                <option value="Nissan">Nissan</option>
+                <!-- Add more makers as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="chassis-no">Chassis No</label>
+            <input type="text" id="chassis-no">
+        </div>
+        <div class="form-group">
+            <label for="chassis-code">Chassis Code</label>
+            <input type="text" id="chassis-code">
+        </div>
+        <div class="form-group">
+            <label for="transmission">Transmission</label>
+            <select id="transmission">
+                <option value="" disabled selected>Select Transmission</option>
+                <option value="Automatic">Automatic</option>
+                <option value="Manual">Manual</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="reg-year">Reg Year/Month</label>
+            <select id="reg-year">
+                <option value="" disabled selected>Select Year/Month</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <!-- Add more years as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="color-code">Color Code</label>
+            <select id="color-code">
+                <option value="" disabled selected>Select Color Code</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <!-- Add more colors as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="interior-color">Interior Color</label>
+            <select id="interior-color">
+                <option value="" disabled selected>Select Interior Color</option>
+                <option value="Black">Black</option>
+                <option value="Beige">Beige</option>
+                <option value="Gray">Gray</option>
+                <option value="Brown">Brown</option>
+                <!-- Add more colors as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="engine-cc">Engine CC</label>
+            <select id="engine-cc">
+                <option value="" disabled selected>Select Engine CC</option>
+                <option value="1000">1000</option>
+                <option value="1500">1500</option>
+                <option value="2000">2000</option>
+                <option value="2500">2500</option>
+                <!-- Add more engine sizes as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="drive">Drive</label>
+            <select id="drive">
+                <option value="" disabled selected>Select Drive Type</option>
+                <option value="FWD">Front-Wheel Drive (FWD)</option>
+                <option value="RWD">Rear-Wheel Drive (RWD)</option>
+                <option value="AWD">All-Wheel Drive (AWD)</option>
+                <option value="4WD">Four-Wheel Drive (4WD)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="body-type">Body Type</label>
+            <select id="body-type">
+                <option value="" disabled selected>Select Body Type</option>
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="Coupe">Coupe</option>
+                <option value="Convertible">Convertible</option>
+                <!-- Add more body types as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fuel">Fuel</label>
+            <select id="fuel">
+                <option value="" disabled selected>Select Fuel Type</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Electric">Electric</option>
+                <option value="Hybrid">Hybrid</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="seats">Seats</label>
+            <select id="seats">
+                <option value="" disabled selected>Select Number of Seats</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="color-name">Color Name</label>
+            <select id="color-name">
+                <option value="" disabled selected>Select Color Name</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="loading-capacity">Loading Capacity</label>
+            <select id="loading-capacity">
+                <option value="" disabled selected>Select Loading Capacity</option>
+                <option value="500kg">500kg</option>
+                <option value="1000kg">1000kg</option>
+                <option value="1500kg">1500kg</option>
+                <option value="2000kg">2000kg</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="engine-type">Engine Type</label>
+            <select id="engine-type">
+                <option value="" disabled selected>Select Engine Type</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Electric">Electric</option>
+                <option value="Hybrid">Hybrid</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="m3">M3</label>
+            <select id="m3">
+                <option value="" disabled selected>Select M3</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    </div>
+</div>
+    <button onclick="submitForm()">Submit</button>
+</div>
+
+<script>
+    function submitForm() {
+        const formData = {
+            stockID: document.getElementById('stock-id').value,
+            maker: document.getElementById('maker').value,
+            chassisNo: document.getElementById('chassis-no').value,
+            chassisCode: document.getElementById('chassis-code').value,
+            transmission: document.getElementById('transmission').value,
+            regYear: document.getElementById('reg-year').value,
+            colorCode: document.getElementById('color-code').value,
+            interiorColor: document.getElementById('interior-color').value,
+            engineCC: document.getElementById('engine-cc').value,
+            drive: document.getElementById('drive').value,
+            bodyType: document.getElementById('body-type').value,
+            fuel: document.getElementById('fuel').value,
+            seats: document.getElementById('seats').value,
+            colorName: document.getElementById('color-name').value,
+            loadingCapacity: document.getElementById('loading-capacity').value,
+            engineType: document.getElementById('engine-type').value,
+            m3: document.getElementById('m3').value
+        };
+
+        // Save data to localStorage
+        localStorage.setItem('vehicleData', JSON.stringify(formData));
+
+        // Redirect to display page
+        window.location.href = 'display.html';
+    }
+</script>
+
+</body>
+</html>
